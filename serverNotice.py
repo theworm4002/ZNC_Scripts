@@ -28,7 +28,7 @@ class serverNotice(znc.Module):
             message = msgSplit[2]
             if message.startswith(':'): message = message[1:]
             if cmd != 'WALLOPS' and cmd != 'LOCOPS' : return znc.CONTINUE 
-            msg = f'{fromName} {cmd.lower()} :{message}'  
+            msg = f'{fromName} {cmd.lower()}: {message}'  
             self.sendToMod(msg)
             return znc.HALT
         except:
